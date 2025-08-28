@@ -41,24 +41,22 @@ Calculator-App/
    start index.html
 
 🎮 Usage
-Enter numbers using the on-screen buttons or keyboard.
-Use operators +, -, *, /, % for calculations.
-Press = or Enter to evaluate the expression.
-Use C to clear everything.
-Use ⌫ (Backspace) to remove the last digit/operator.
+* Enter numbers using the on-screen buttons or keyboard.
+* Use operators +, -, *, /, % for calculations.
+* Press = or Enter to evaluate the expression.
+* Use C to clear everything.
+* Use ⌫ (Backspace) to remove the last digit/operator.
 
 🛠️ Tech Stack
-HTML5 – Structure
-CSS3 – Styling & Responsiveness
-JavaScript (ES6) – Logic & Event Handling
+* HTML – Structure
+* CSS – Styling & Responsiveness
+* JavaScript  – Logic & Event Handling
 
 🤝 Contributing
-
 Contributions, issues, and feature requests are welcome!
 Feel free to fork this repo and submit a pull request.
 
 📜 License
-
 This project is open-source and available under the MIT License.
 
 👨‍💻 Developed by Tejas Kondhalkar
