@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <!-- Mode Toggles -->
+        <div class="mode-toggles">
+            <button id="theme-toggle">☀️</button>
+            <button id="scientific-toggle">Sci</button>
+        </div>
+
+        <!-- Display section -->
+        <div class="display">
+            <div class="previous-operand"></div>
+            <div class="current-operand">0</div>
+            <div class="keyboard-hint">Keyboard input supported</div>
+        </div>
+
+        <!-- Scientific functions keypad -->
+        <div class="scientific-keypad" id="scientific-keypad">
+            <button class="operator" data-action="sin">sin</button>
+            <button class="operator" data-action="cos">cos</button>
+            <button class="operator" data-action="tan">tan</button>
+            <button class="operator" data-action="log">log</button>
+            <button class="operator" data-action="sqrt">√</button>
+            <button class="operator" data-action="pi">π</button>
+            <button class="operator" data-action="e">e</button>
+            <button class="operator" data-action="power">x²</button>
+        </div>
+        
+        <!-- Main keypad -->
+        <div class="keypad">
+            <!-- Memory functions -->
+            <button class="memory" data-action="mc">MC</button>
+            <button class="memory" data-action="mr">MR</button>
+            <button class="memory" data-action="m-plus">M+</button>
+            <button class="memory" data-action="m-minus">M-</button>
+
+            <button class="clear" data-action="clear">C</button>
+            <button class="delete" data-action="delete">DEL</button>
+            <button class="operator" data-operator="%">%</button>
+            <button class="operator" data-operator="/">÷</button>
+            
+            <button data-number="7">7</button>
+            <button data-number="8">8</button>
+            <button data-number="9">9</button>
+            <button class="operator" data-operator="*">×</button>
+            
+            <button data-number="4">4</button>
+            <button data-number="5">5</button>
+            <button data-number="6">6</button>
+            <button class="operator" data-operator="-">−</button>
+            
+            <button data-number="1">1</button>
+            <button data-number="2">2</button>
+            <button data-number="3">3</button>
+            <button class="operator" data-operator="+">+</button>
+            
+            <button class="zero" data-number="0">0</button>
+            <button data-number=".">.</button>
+            <button class="equals" data-action="calculate">=</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Interactive Calculator &copy; by Tejas
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

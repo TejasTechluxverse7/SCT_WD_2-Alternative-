@@ -1,0 +1,244 @@
+/* CSS Variables for themes */
+:root {
+    /* Dark Theme */
+    --bg-color: linear-gradient(135deg, #6e8efb, #a777e3);
+    --calc-bg: #22252d;
+    --keypad-bg: #292d36;
+    --text-color: #ffffff;
+    --display-text-color: rgba(255, 255, 255, 0.7);
+    --button-bg: #2a2d37;
+    --button-hover-bg: #363b49;
+    --operator-bg: #4b5efc;
+    --operator-hover-bg: #6375ff;
+    --equals-bg: #f75964;
+    --equals-hover-bg: #ff717b;
+    --clear-delete-bg: #a6a6a6;
+    --clear-delete-text: #2a2d37;
+    --clear-delete-hover-bg: #bfbfbf;
+    --memory-bg: #3a3e4a;
+    --memory-hover-bg: #4a4e5c;
+    --border-color: #2a2d37;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --error-color: #ff717b;
+}
+
+/* Light Theme */
+body.light-theme {
+    --bg-color: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    --calc-bg: #e2e8f0;
+    --keypad-bg: #f7fafc;
+    --text-color: #2d3748;
+    --display-text-color: #4a5568;
+    --button-bg: #edf2f7;
+    --button-hover-bg: #e2e8f0;
+    --operator-bg: #4c51bf;
+    --operator-hover-bg: #5a67d8;
+    --equals-bg: #e53e3e;
+    --equals-hover-bg: #f56565;
+    --clear-delete-bg: #cbd5e0;
+    --clear-delete-text: #2d3748;
+    --clear-delete-hover-bg: #a0aec0;
+    --memory-bg: #d1d9e6;
+    --memory-hover-bg: #b3bdd0;
+    --border-color: #cbd5e0;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --error-color: #e53e3e;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+    padding: 20px;
+}
+
+.calculator {
+    background-color: var(--calc-bg);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    width: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.display {
+    background-color: var(--calc-bg);
+    color: var(--text-color);
+    padding: 30px 20px 20px;
+    text-align: right;
+}
+
+.previous-operand {
+    color: var(--display-text-color);
+    font-size: 1.2rem;
+    min-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.current-operand {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 10px;
+    min-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.keypad {
+    background-color: var(--keypad-bg);
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+}
+
+.scientific-keypad {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+    padding: 10px 20px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.scientific-keypad.visible {
+    display: grid;
+}
+
+button {
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    padding: 16px 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.operator {
+    background-color: var(--operator-bg);
+    color: var(--text-color);
+}
+
+.operator:hover {
+    background-color: var(--operator-hover-bg);
+}
+
+.equals {
+    background-color: var(--equals-bg);
+    color: var(--text-color);
+}
+
+.equals:hover {
+    background-color: var(--equals-hover-bg);
+}
+
+.clear, .delete {
+    background-color: var(--clear-delete-bg);
+    color: var(--clear-delete-text);
+}
+
+.clear:hover, .delete:hover {
+    background-color: var(--clear-delete-hover-bg);
+}
+
+.memory {
+    background-color: var(--memory-bg);
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.memory:hover {
+    background-color: var(--memory-hover-bg);
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.footer {
+    text-align: center;
+    color: var(--text-color);
+    padding: 15px;
+    font-size: 0.9rem;
+    background-color: var(--calc-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.keyboard-hint {
+    color: var(--display-text-color);
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.error {
+    color: var(--error-color);
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.mode-toggles {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.mode-toggles button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mode-toggles button.active {
+    background-color: var(--operator-bg);
+    color: white;
+}
+
+@media (max-width: 350px) {
+    .calculator {
+        width: 280px;
+    }
+    
+    button {
+        padding: 14px 0;
+        font-size: 1.3rem;
+    }
+}
